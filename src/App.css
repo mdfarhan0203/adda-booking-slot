@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #0D1282;
+    background-color: #ACFADF;
+}
+
+.header{
+    padding-top: 4rem;
+    display: flex;
+    justify-content: center;
+    font-size:2rem;
+    margin-bottom: 2rem;
+}
+.form-submit{
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+select,button,input{
+    height: 3rem;
+    width: 9rem;
+    border: 3px solid black;
+    border-radius: 10px;
+
+}
+
+.book-slot-btn ,.content{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+label{
+    display: block;
+    font-size: 1.7rem;
+}
+
+
+/* ................ */
+
+
+.content{
+    height:10rem ;
+    margin-top: 5rem;
+}
