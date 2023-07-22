@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/adda-booking-slot/static/css/main.9936773a.css",
+    "main.js": "/adda-booking-slot/static/js/main.66b6a647.js",
+    "index.html": "/adda-booking-slot/index.html",
+    "main.9936773a.css.map": "/adda-booking-slot/static/css/main.9936773a.css.map",
+    "main.66b6a647.js.map": "/adda-booking-slot/static/js/main.66b6a647.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9936773a.css",
+    "static/js/main.66b6a647.js"
+  ]
+}
