@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Booking({ handlerSubmited }) {
+export default function Booking({ handlerSubmited, setError }) {
   const [bookSlot, SetBookSlot] = useState({
     title: '',
     date: '',
@@ -14,7 +14,13 @@ export default function Booking({ handlerSubmited }) {
   }
 
   const handlerChange = (e) => {
-    const { name, value } = e.target
+    let { name, value } = e.target
+    if (value === 'TennisCourt' || value === 'clubHouse') {
+      console.log("nnnnkllllll", value)
+      name = 'title'
+    }
+    console.log("naem", name)
+    console.log("value", value)
     SetBookSlot(pre => { return { ...pre, [name]: value } })
   }
 
@@ -30,15 +36,23 @@ export default function Booking({ handlerSubmited }) {
 
 
   const handlerSumbit = () => {
-    timeFrom()
-    handlerSubmited(bookSlot)
-    SetBookSlot({
-      title: '',
-      date: '',
-      startTime: '',
-      endTime: '',
-      checkTime: []
-    })
+    if (bookSlot.title && bookSlot.date && bookSlot.startTime && bookSlot.endTime) {
+      // console.log("all field given")
+      setError(true)
+      timeFrom()
+      handlerSubmited(bookSlot)
+      SetBookSlot({
+        title: '',
+        date: '',
+        startTime: '',
+        endTime: '',
+        checkTime: []
+      })
+    }
+    else {
+      // console.log("error")
+      setError(false)
+    }
   }
   return (
     <div className='container'>
@@ -47,14 +61,16 @@ export default function Booking({ handlerSubmited }) {
         <div>
           <label htmlFor='sport'>Select Sports</label>
           <select
-            id='sport'
-            name='title'
             value={bookSlot.title}
-            onChange={(e) => handlerChange(e)}>
+            onChange={(e) => handlerChange(e)}
+          >
             <option
-            >Clubhouse</option>
+              value={''}
+            >Choose the Sports</option>
             <option
-            >Tennis Court</option>
+              value={"TennisCourt"}>Tennis Court</option>
+            <option
+              value={"clubHouse"}>Club House</option>
           </select>
         </div>
         <div>

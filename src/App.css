@@ -45,3 +45,9 @@ label{
     height:10rem ;
     margin-top: 5rem;
 }
+
+
+/* .............................................. ERROR*/
+.error{
+    color: red;
+}
